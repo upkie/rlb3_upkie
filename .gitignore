@@ -1,0 +1,8 @@
+*.egg-info
+*.pyc
+.pixi
+__pycache__
+activate.sh
+cache/
+dist/
+environment.tar
