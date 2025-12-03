@@ -14,6 +14,22 @@ To train a new policy:
 pixi run train
 ```
 
+This will train using 8 parallel environments (the default). To customize the number of environments or show the PyBullet GUI during training:
+
+```console
+pixi run train <n_envs> [show]
+```
+
+Examples:
+
+```console
+# Train with 4 parallel environments (no GUI)
+pixi run train 4
+
+# Train with 2 environments and display the PyBullet GUI
+pixi run train 2 gui
+```
+
 To test the latest trained policy:
 
 ```console
