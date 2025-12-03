@@ -4251,7 +4251,7 @@ packages:
 - pypi: ./
   name: rlb3-upkie
   version: 0.1.0
-  sha256: 6ae916105b332fe02d9e4892074e7dce853c39191ab32bbe4104f5968b6cc199
+  sha256: d3e05713a223ab2f347d24c2796706953195f0f71fcf6d06d4df061deb65a1d7
   requires_dist:
   - pybullet>=3
   - rl-zoo3>=2.6.0
