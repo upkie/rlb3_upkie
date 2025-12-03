@@ -9,11 +9,11 @@ from pathlib import Path
 from typing import Optional
 
 import gymnasium as gym
-from stable_baselines3 import PPO
-
 import upkie.envs
 import upkie.logging
-from agents.rlb3_trainer.select_env import ENVIRONMENTS, select_env
+from stable_baselines3 import PPO
+
+from .select_env import ENVIRONMENTS, select_env
 
 
 def find_latest_model(

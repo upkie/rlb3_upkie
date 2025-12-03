@@ -9,11 +9,11 @@ import sys
 from pathlib import Path
 from typing import List, Tuple
 
-from rl_zoo3.train import train as rl_zoo3_train
-
 import upkie.envs
 import upkie.logging
-from agents.rlb3_trainer.select_env import ENVIRONMENTS, select_env
+from rl_zoo3.train import train as rl_zoo3_train
+
+from .select_env import ENVIRONMENTS, select_env
 
 CLI_SETTINGS = {
     "--algo": ["ppo"],
