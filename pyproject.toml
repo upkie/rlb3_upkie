@@ -51,7 +51,7 @@ upkie = ">=10.0.0"
 rlb3_upkie = { path = ".", editable = true }
 
 [tool.pixi.tasks]
-train = "python -m rlb3_upkie.train --env Upkie-PyBullet-Pendulum"
+train = { cmd = "python -m rlb3_upkie.train --env Upkie-PyBullet-Pendulum --hyperparams n_envs:{{ n_envs }} {% if show == 'with_gui' %}--env-kwargs gui:True{% endif %}", args = ["n_envs", "show"] }
 enjoy = "python -m rlb3_upkie.enjoy --env Upkie-PyBullet-Pendulum"
 
 [tool.pixi.feature.coverage.dependencies]
