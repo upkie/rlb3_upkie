@@ -6,3 +6,4 @@ activate.sh
 cache/
 dist/
 environment.tar
+logs/
