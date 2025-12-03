@@ -48,12 +48,11 @@ tensorboard = "*"
 upkie = ">=10.0.0"
 
 [tool.pixi.pypi-dependencies]
-rl-zoo3 = ">=2.6.0"
 rlb3_upkie = { path = ".", editable = true }
 
 [tool.pixi.tasks]
-train = "python rlb3_upkie/train.py --env Upkie-PyBullet-Pendulum"
-enjoy = "python rlb3_upkie/enjoy.py --env Upkie-PyBullet-Pendulum"
+train = "python -m rlb3_upkie.train --env Upkie-PyBullet-Pendulum"
+enjoy = "python -m rlb3_upkie.enjoy --env Upkie-PyBullet-Pendulum"
 
 [tool.pixi.feature.coverage.dependencies]
 coveralls = ">=4.0.0"
@@ -97,10 +96,6 @@ line-length = 79
 
 [tool.ruff.lint]
 ignore = [
-    "D100",  # we use ## Doxygen comments: https://stackoverflow.com/q/71380065
-    "D104",  # we use ## Doxygen comments: https://stackoverflow.com/q/71380065
-    "D204",  # ruff does not know we use Doxygen docstrings
-    "D205",  # ruff does not know we use Doxygen docstrings
     "D401",  # good for methods but not for class docstrings
     "D405",  # British-style section names are also "proper"!
 ]
