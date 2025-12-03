@@ -6,8 +6,19 @@
 
 """Environment wrapper to silence Upkie warnings in subprocess environments."""
 
+import logging
+
 import gymnasium as gym
 from upkie.logging import disable_warnings
+
+
+class SuppressUpkieWarnings(logging.Filter):
+    """Filter that suppresses Upkie warning messages."""
+
+    def filter(self, record):
+        if ( record.name == "loop_rate_limiters" and record.levelno == logging.WARNING):
+            return False
+        return True
 
 
 def silence_warnings(env: gym.Env) -> gym.Env:
@@ -25,4 +36,11 @@ def silence_warnings(env: gym.Env) -> gym.Env:
     """
     # Suppress warnings in this subprocess
     disable_warnings()
+
+    # Add a filter to the root logger to catch any warnings that slip through
+    warning_suppressor = SuppressUpkieWarnings()
+    logging.getLogger().addFilter(warning_suppressor)
+    logging.getLogger("loop_rate_limiters").addFilter(warning_suppressor)
+    logging.getLogger("loop_rate_limiters").setLevel(logging.ERROR)
+
     return env
