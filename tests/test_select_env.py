@@ -24,7 +24,6 @@ class TestEnvironments:
     def test_environments_contain_expected_values(self):
         """Verify expected environment names are present."""
         assert "Upkie-PyBullet-Pendulum" in ENVIRONMENTS
-        assert "Upkie-Genesis-Pendulum" in ENVIRONMENTS
 
 
 class TestSelectEnv:

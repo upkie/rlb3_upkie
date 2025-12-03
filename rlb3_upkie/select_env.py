@@ -5,7 +5,6 @@
 
 ENVIRONMENTS = [
     "Upkie-PyBullet-Pendulum",
-    "Upkie-Genesis-Pendulum",
 ]
 
 
