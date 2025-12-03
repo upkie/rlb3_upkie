@@ -7,7 +7,6 @@
 """Environment wrapper to silence Upkie warnings in subprocess environments."""
 
 import gymnasium as gym
-
 from upkie.logging import disable_warnings
 
 
