@@ -12,7 +12,7 @@ maintainers = [
     {name = "Stéphane Caron", email = "stephane.caron@normalesup.org"},
 ]
 dynamic = ["version", "description"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Framework :: Robot Framework :: Library",
@@ -20,7 +20,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -42,13 +41,15 @@ Changelog = "https://github.com/upkie/rlb3_upkie/blob/main/CHANGELOG.md"
 channels = ["conda-forge"]
 platforms = ["linux-64"]
 
-[tool.pixi.pypi-dependencies]
+[tool.pixi.dependencies]
 pybullet = ">=3"
-rl-zoo3 = ">=2.6.0"
-rlb3_upkie = { path = ".", editable = true }
 stable-baselines3 = ">=2.3.0"
 tensorboard = "*"
 upkie = ">=10.0.0"
+
+[tool.pixi.pypi-dependencies]
+rl-zoo3 = ">=2.6.0"
+rlb3_upkie = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 train = "python rlb3_upkie/train.py --env Upkie-PyBullet-Pendulum"
@@ -78,9 +79,7 @@ dependencies = { python = "3.11.*" }
 dependencies = { python = "3.12.*" }
 
 [tool.pixi.feature.test.dependencies]
-pybullet = ">=3"
 pytest = "*"
-"stable-baselines3" = ">2.3.0"
 
 [tool.pixi.feature.test.tasks]
 test = "pytest tests/"

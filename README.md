@@ -2,6 +2,10 @@
 
 Software to train neural-network policies for Upkie wheeled bipeds using [RL Baselines3 Zoo](https://github.com/DLR-RM/rl-baselines3-zoo).
 
+## Installation
+
+This project uses [pixi](https://pixi.sh/latest/#installation) to manage Python dependencies.
+
 ## Usage
 
 To train a new policy:
@@ -17,8 +21,6 @@ pixi run enjoy
 ```
 
 ## Development
-
-Project tasks such as linting and testing are managed with [pixi](https://pixi.sh/latest/#installation).
 
 - Linting: `pixi run lint`
 - Testing: `pixi run test`
