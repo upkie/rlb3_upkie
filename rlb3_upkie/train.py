@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
     # Use local hyperparameters file, unless anothone is specified
     if "-conf" not in sys.argv and "--conf-file" not in sys.argv:
-        hyperparams_file = Path(__file__).parent / "hyperparams.yml"
+        hyperparams_file = Path(__file__).parent.parent / "hyperparams.yml"
         sys.argv.extend(["--conf-file", str(hyperparams_file)])
 
     # Now let RL Baselines3 Zoo handle training
