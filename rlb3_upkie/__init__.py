@@ -6,5 +6,4 @@
 
 """RL Baselines3 Zoo agent for training new balancing policies."""
 
-## \namespace agents.rlb3_trainer
-## \brief RL Baselines3 Zoo agent for training new balancing policies.
+__version__ = "0.1.0"
